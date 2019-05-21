@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pauseChronometer(View view) {
+            if(timerRunning) {
+                chronometer.stop();
+                pauseOffSet = SystemClock.elapsedRealtime() - chronometer.getBase();
 
-            pauseOffSet = SystemClock.elapsedRealtime() - chronometer.getBase();
-            chronometer.stop();
-            timerRunning = false;
-
+                timerRunning = false;
+            }
     }
 }
